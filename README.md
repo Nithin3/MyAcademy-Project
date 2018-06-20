@@ -6,17 +6,17 @@ delete, read, update(CRUD functionalities). It has user authentication. A user c
 give reviews too, but only if they are logged in. Anyone can view where a particular academy is on a google maps when he/she clicks on an academy. This web application is created with RESTful Routes.
 
 ---
-###Features
+##Features##
 
 ---
-#####Authentication:
+###Authentication###:
 
 * User login with username and password
 
 * Admin sign-up with admin code
 
 ---
-#####Authorization:
+###Authorization###:
 
 * One cannot manage posts and view user profile without being authenticated
 
@@ -35,7 +35,7 @@ give reviews too, but only if they are logged in. Anyone can view where a partic
 * Search existing academies
 
 ---
-#####Manage user account with basic functionalities:
+###Manage user account with basic functionalities:###
 
 * Password reset via email confirmation
 
@@ -46,7 +46,7 @@ give reviews too, but only if they are logged in. Anyone can view where a partic
 * Responsive web design
 
 ---
-#####Custom Enhancements
+###Custom Enhancements###
 
 * Update academy photos when editing academies
 
@@ -55,10 +55,10 @@ give reviews too, but only if they are logged in. Anyone can view where a partic
 * Improve image load time on the landing page using Cloudinary
 
 ---
-###Built with
+##Built with##
 
 ---
-#####Front-end
+###Front-end###
 * **HTML5
 * CSS
 * JavaScript**
@@ -66,7 +66,7 @@ give reviews too, but only if they are logged in. Anyone can view where a partic
 * SemanticUI
 
 ---
-#####Back-end
+####Back-end###
 * DOM Manipulation
 * jQuery
 * Unix(Command Line) Commands
@@ -83,7 +83,7 @@ give reviews too, but only if they are logged in. Anyone can view where a partic
 * ejs
 
 ---
-#####User friendly
+###User friendly###
 * Google Maps APIs
 * express-session
 * method-override
@@ -94,31 +94,31 @@ give reviews too, but only if they are logged in. Anyone can view where a partic
 * connect-flash
 
 ---
-#####Platforms
+###Platforms###
 * Cloudinary
 * Heroku
 * **Cloud9**
 
 ---
-###Installing or Setup
+###Installing or Setup###
 You can use git clone or simply download the zip to your local machine.
 
 This guide will help you to install Node.js and npm:
 
 https://docs.npmjs.com/getting-started/installing-node
 
-###Running Application: cd into MyAcademy folder and type the following command in terminal:
+###Running Application: cd into MyAcademy folder and type the following command in terminal:###
 
 ```
 node app.js
 ```
 
 ---
-###Acknowledgments
+###Acknowledgments###
 * I hope this project will inspire you to create many more projects ahead. Thank you for using or contributing to this repository.
 
 ---
-###Contact Me
+###Contact Me###
 * Gmail	:	nithin.sagar3@gmail.com or nnallagu@asu.edu
 
 * Facebook	:	https://www.facebook.com/nithin.sagar.33
