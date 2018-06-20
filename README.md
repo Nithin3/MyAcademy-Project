@@ -9,14 +9,14 @@ give reviews too, but only if they are logged in. Anyone can view where a partic
 ## Features ##
 
 ---
-### Authentication ###:
+### Authentication: ###
 
 * User login with username and password
 
 * Admin sign-up with admin code
 
 ---
-### Authorization ###:
+### Authorization: ###
 
 * One cannot manage posts and view user profile without being authenticated
 
