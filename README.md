@@ -59,9 +59,9 @@ give reviews too, but only if they are logged in. Anyone can view where a partic
 
 ---
 ### Front-end ###
-* **HTML5
-* CSS
-* JavaScript**
+* **HTML5**
+* **CSS**
+* **JavaScript**
 * Bootstrap
 * SemanticUI
 
@@ -70,11 +70,11 @@ give reviews too, but only if they are logged in. Anyone can view where a partic
 * DOM Manipulation
 * jQuery
 * Unix(Command Line) Commands
-* **NodeJS
+* **NodeJS**
 * NPM
-* ExpressJS
+* **ExpressJS**
 * REST
-* MongoDB**
+* **MongoDB**
 * Database Associations
 * Authentication
 * PassportJS
