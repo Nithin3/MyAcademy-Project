@@ -1,0 +1,61 @@
+
+
+<% include ./partials/header %>
+
+<div class="container">
+    <div class="row">
+
+        <h1 style="text-align: center;"><i class="fas fa-users"></i> Sign Up</h1>
+        <div style="width:40%; margin: 30 auto;">
+
+            <form action="/register" method="POST">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input class="form-control" type="text" name="username" placeholder="username"></input>                 
+                </div>
+                
+                <div class="form-group">
+                    <label>Password</label>
+                    <input class="form-control" type="password" name="password" placeholder="password"></input>
+                </div>
+                              
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input class="form-control" type="text" name="firstname" placeholder="first name"></input>
+                </div>
+                
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input class="form-control" type="text" name="lastname" placeholder="last name"></input>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email</label>
+                    <input class="form-control" type="email" name="email" placeholder="example@ex.com"></input>
+                </div>
+                
+                <div class="form-group">
+                    <label>Avatar Url</label>
+                    <input class="form-control" type="text" name="avatar" placeholder="avatar url"></input>
+                </div>
+                
+                
+                <div class="form-group">
+                     <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
+                
+                <div class="form-group">
+                    <label>Admin Code</label>
+                    <input class="form-control" type="password" name="admincode" placeholder="admin code if you are an admin"></input>
+                </div>
+         
+
+            </form>
+                <a href="/cricketcamps">Go Back</a> 
+        </div>
+
+    </div>
+  
+</div>
+
+<% include ./partials/footer %>

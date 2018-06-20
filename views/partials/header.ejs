@@ -1,0 +1,68 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>MyAcademy</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Lato|Lora|Nunito|Roboto|Slabo+27px" rel="stylesheet">
+        <link rel="stylesheet" href="/stylesheets/main.css"></link>
+        <link rel="stylesheet" href="/stylesheets/profile.css"></link>
+        <link rel="stylesheet" href="/stylesheets/landing.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        
+    </head>
+    
+    <body>
+       
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    
+                </button>
+        <a class="navbar-brand" href="/"><i class="fab fa-monero"></i> MyAcademy</a>
+    </div>
+    <div style="padding-top:8px;" class="navbar-header">
+                    <form action="/cricketcamps" method="GET" class="form-inline">
+                        <div class="form-group">
+                            <input type="text" name="search" placeholder="Search Academies..." class="form-control">
+                            <input type="submit" value="Search" class="btn btn-default"></input>
+                            
+                        </div>
+                    </form>
+    </div>  
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+                            
+                               <li><a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a></li>
+                               <% if(!currentUser){ %>
+                                    <li><a class="nav-link" href="/register">Sign Up<span class="sr-only">(current)</span></a></li>
+                                    <li><a class="nav-link" href="/login">Login<span class="sr-only">(current)</span></a></li>     
+                                <%}else{%>
+                                     <li><a href="/users/<%=currentUser._id%>">Signed in as <%=currentUser.username%></a></li>
+                                     <li><a class="nav-link" href="/logout">Log out<span class="sr-only">(current)</span></a></li>
+                               <% } %>
+                              
+                       </ul>
+    </div>
+  </div>
+</nav>
+        
+        <div class="container">
+            <% if(errorMessage && errorMessage.length>0){%>
+               <div class="alert alert-danger" role="alert"><%=errorMessage%></div>             
+           <% } %>
+            <% if(successMessage && successMessage.length>0){%>
+                <div class="alert alert-success" role="alert"><%=successMessage%></div> 
+            <% } %>
+        </div>
+        
+       

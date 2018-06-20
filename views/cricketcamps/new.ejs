@@ -1,0 +1,50 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+
+         <h1 style="text-align: center;">Add a cricket academy</h1>
+        <div style="width:40%; margin: 30 auto;">
+
+            <form action="/cricketcamps" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input class="form-control" type="text" name="name" placeholder="Name"></input>                   
+                </div>
+                
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" id="image" name="image" accept="image/*" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Description</label>
+                    <input class="form-control" type="text" name="description" placeholder="description"></input>
+                </div>
+                
+                <div class="form-group">
+                    <label>Fee</label>
+                    <input class="form-control" type="number" name="fee" placeholder="fee per month" min="0.0" step="0.1"></input>
+                </div>
+                
+                <div class="form-group">
+                    <label>Location</label>
+                    <input class="form-control" type="text" name="location" id="location" placeholder="Yosemite National Park, CA">
+                </div>
+                
+                <div class="form-group">
+                     <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
+
+                </form>
+                <hr>
+                <a href="/cricketcamps">Go Back</a> 
+        </div>
+
+        
+                 
+    </div>
+  
+</div>
+
+<% include ../partials/footer %>

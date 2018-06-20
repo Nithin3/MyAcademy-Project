@@ -1,0 +1,52 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+             <h1>Welcome to MyAcademy</h1>
+            <p>View popular cricket academies from all over the world</p>
+            <p>
+                <a class="btn btn-primary btn-lg" href="/cricketcamps/new"><i class="fas fa-plus-square"></i> Add a cricket academy</a>
+            </p>
+           
+        </div>
+   
+    </header>
+
+    
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <div class="col-md-12">
+            <% if(messageNoMatch!==undefined){ %>
+                <h3><%=messageNoMatch%></h3>
+                        
+                <form action="/cricketcamps" method="GET" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" name="search" placeholder="Search Academies..." class="form-control">
+                        <input type="submit" value="Search" class="btn btn-default">
+                    </div>
+                </form>
+        
+            <%} %>
+        </div>
+        
+        <% cricketcamps.forEach(function(cricketcamp){ %>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img src="<%=cricketcamp.image%>">
+                <div class="caption">
+                    <h4><%= cricketcamp.name%></h4>
+                </div>
+                <p>
+                  <a href="/cricketcamps/<%=cricketcamp._id%>" data-ajax="false" class="btn btn-primary"><i class="fas fa-info-circle"></i> More Info</a>  
+                </p>
+            </div>
+            
+
+        </div>
+        <% }); %>
+        
+    </div>
+</div>
+
+
+<% include ../partials/footer %>

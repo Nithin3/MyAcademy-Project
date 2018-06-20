@@ -1,0 +1,52 @@
+.thumbnail img{
+    width:100%;
+}
+
+.thumbnail{
+    padding:0;
+}
+
+#delete-form{
+    display: inline;
+}
+
+/* Google Maps */
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+#avatar-image{
+    height:250px;
+    width:250px;
+}
+
+#forgot-page{
+    padding-top: 100px;
+}
+
+h1{
+    font-family: 'Lato', sans-serif;
+}
+
+p{
+    font-family: 'Lora', serif;
+}
+
+h4{
+    font-family: 'Lora', serif;
+}
+
+li{
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2em;
+}
+
+.glyphicon {  margin-bottom: 10px;margin-right: 10px;}
+
+small {
+display: block;
+line-height: 1.428571429;
+color: #999;
+}
+

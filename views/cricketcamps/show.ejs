@@ -1,0 +1,95 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <p class="lead">
+                MyAcademy
+            </p>
+            <div class="list-group">
+                <li class="list-group-item active">Info 1</li>
+                <li class="list-group-item">Info 1</li>
+                <li class="list-group-item">Info 1</li>
+            </div>
+            <div id="map" data-role="page"></div>
+        </div>
+        
+        <div class="col-md-8">
+            <div class="thumbnail">
+                <img class="img-responsive" src="<%=cricketcamp.image%>">
+                <div class="caption">
+                    <h4 class="pull-right"><i class="fas fa-rupee-sign"></i><strong> <%=cricketcamp.fee%></strong>/month</h4>
+                    <h4><strong><%=cricketcamp.name%></strong></h4>
+                    <p><%=cricketcamp.description%></p>
+                    <p>
+                       <em>Submitted by:<a href="/users/<%=cricketcamp.author.id%>"> <%= cricketcamp.author.username %></a>, <%= moment(cricketcamp.createdAt).fromNow() %></em>
+                    </p>
+                    <% if(currentUser && cricketcamp.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+                         <a href="/cricketcamps/<%=cricketcamp._id%>/edit" class="btn btn-xs btn-warning">Edit</a>
+                        <form id="delete-form" action="/cricketcamps/<%=cricketcamp._id%>?_method=DELETE" method="POST">
+                            <button class="btn btn-xs btn-danger">Delete</button>
+                        </form>
+                   <% } %>
+                   
+                </div>
+            </div>
+            
+            <div class="well">
+                <div class="text-right">
+                    <a href="/cricketcamps/<%=cricketcamp._id%>/comments/new" class="btn btn-success"><i class="fas fa-plus-square"></i> Add a comment</a>
+                </div>
+                <hr>
+               <% cricketcamp.comments.forEach(function(comment){ %>
+               
+                    <div class="row">
+                        <div class="col-md-12">
+                             <strong><%= comment.author.username%></strong>
+                             <span class="pull-right"><%= moment(comment.createdAt).fromNow() %></span>
+                            <p>
+                                <%= comment.text%>
+                            </p>
+                            <% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+                                 <a href="/cricketcamps/<%=cricketcamp._id%>/comments/<%=comment._id%>/edit" class="btn btn-xs btn-warning">Edit</a>
+                                <form id="delete-form" action="/cricketcamps/<%=cricketcamp._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                                    <button class="btn btn-xs btn-danger">Delete</button>
+                                </form>
+                            <% } %>
+                        </div>
+                    </div>
+                   
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+  function initMap() {
+    var lat = <%= cricketcamp.lat %>;
+    var lng = <%= cricketcamp.lng %>;
+    var center = {lat: lat, lng: lng };
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: center,
+        scrollwheel: false
+    });
+    var contentString = `
+      <strong><%= cricketcamp.name %><br />
+      <%= cricketcamp.location %></strong>
+      <p><%= cricketcamp.description %></p>
+    `
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    var marker = new google.maps.Marker({
+        position: center,
+        map: map
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVVvOzWpl25yb52lgs5wRT8covJzqAp-4&callback=initMap"></script>
+
+<% include ../partials/footer %>

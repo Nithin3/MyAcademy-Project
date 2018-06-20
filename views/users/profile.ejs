@@ -1,0 +1,73 @@
+<% include ../partials/header %>
+	
+	
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <img src="<%=user.avatar%>" alt="" class="img-rounded img-responsive" />
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <h4><%=user.firstName+" "+user.lastName%></h4>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">My Summary</button>
+                          <div id="demo" class="collapse">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                          </div>
+                        
+                         <small><cite title="San Francisco, USA">San Francisco, USA <i class="glyphicon glyphicon-map-marker"> 
+                        
+                        </i></cite></small>
+                        <p>
+                            <div class="caption"><span class="glyphicon glyphicon-envelope"></span></i><a href="mailto:<%=user.email%>"><%=user.email%></a></div>
+                            
+                            <br />
+                            <i class="glyphicon glyphicon-globe"></i><a href="http://www.jquery2dotnet.com">www.jquery2dotnet.com</a>
+                            <br />
+                            <i class="glyphicon glyphicon-gift"></i>27 October, 1999</p>
+                        <!-- Split button -->
+                        <div class="btn-group">
+                            
+                            <div class="dropdown">
+                              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Social Profiles
+                              <span class="caret"></span></button>
+                              <ul class="dropdown-menu">
+                                <li><a href="https://github.com/Nithin3">Github</a></li>
+                                <li><a href="https://www.linkedin.com/in/nithin-sagar-nallagula">Linkedin</a></li>
+                                <li><a href="https://www.facebook.com/nithin.sagar.33">Facebook</a></li>
+                              </ul>
+                            </div>
+                            
+                                                                                                                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+    
+            <% cricketcamps.forEach(function(cricketcamp){ %>
+            <div style=" height: 200px; width: 50%;" class="col-md-4">
+                <div class="thumbnail">
+                    <img src="<%=cricketcamp.image%>">
+                    <div class="caption">
+                        <h4><%= cricketcamp.name%></h4>
+                    </div>
+                    <p>
+                      <a href="/cricketcamps/<%=cricketcamp.id%>" class="btn btn-primary">More Info</a>  
+                    </p>
+                </div>
+                
+            </div>
+            <% }); %>
+         </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>
